@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Networking | IT Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#6366f1;
+  --secondary:#22d3ee;
+  --glass:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,0.15);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:linear-gradient(270deg,#020617,#020617,#0f172a);
+  background-size:600% 600%;
+  animation:bgMove 18s ease infinite;
+  color:#ffffff;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ===== NAVBAR ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:16px;
+  background:rgba(2,6,23,0.8);
+  backdrop-filter:blur(14px);
+  z-index:1000;
+}
+
+nav a{
+  color:#e5e7eb;
+  text-decoration:none;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:var(--primary);
+}
+
+/* ===== SLIDER ===== */
+.top-slider{
+  margin-top:70px;
+  width:100%;
+  height:70vh;
+  overflow:hidden;
+  position:relative;
+}
+
+.slides{
+  display:flex;
+  height:100%;
+  transition:transform 0.8s ease;
+}
+
+.slide{
+  min-width:100%;
+  position:relative;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.shadow-slide::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.6)
+  );
+}
+
+/* Buttons */
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.6);
+  border:none;
+  color:white;
+  font-size:28px;
+  padding:10px 16px;
+  cursor:pointer;
+  border-radius:50%;
+}
+
+.prev{ left:20px; }
+.next{ right:20px; }
+
+/* ===== SECTION ===== */
+section{
+  padding:110px 10%;
+}
+
+h2{
+  text-align:center;
+  font-size:2.5rem;
+  margin-bottom:60px;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.network-box{
+  max-width:950px;
+  margin:auto;
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:45px;
+  line-height:1.9;
+  backdrop-filter:blur(14px);
+}
+
+.network-box h3{
+  margin-top:28px;
+  margin-bottom:10px;
+  font-size:1.45rem;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.network-box p{
+  color:#d1d5db;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px;
+  opacity:0.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .top-slider{ height:55vh; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#network">Networking</a>
+  <a href="#jobs">Jobs</a>
+</nav>
+
+<!-- IMAGE SLIDER -->
+<div class="top-slider" id="home">
+  <div class="slides">
+    <div class="slide">
+      <img src="net1.jpg" alt="Networking Lab">
+    </div>
+
+    <div class="slide shadow-slide">
+      <img src="net2.jpg" alt="Network Devices">
+    </div>
+
+    <div class="slide">
+      <img src="net3.png" alt="Network Architecture">
+    </div>
+  </div>
+
+  <button class="slide-btn prev">❮</button>
+  <button class="slide-btn next">❯</button>
+</div>
+
+<!-- NETWORK DESCRIPTION -->
+<section id="network">
+  <h2>About Networking</h2>
+
+  <div class="network-box">
+    <h3>Introduction to Networking</h3>
+    <p>
+      Networking is the practice of connecting computers and other devices to
+      share resources, information, and services. Networks can be small like a
+      home LAN or large like the internet.
+    </p>
+
+    <h3>Key Concepts of Networking</h3>
+    <p>
+      Networking involves hardware devices such as routers, switches, and
+      access points. It also includes protocols like TCP/IP, DNS, DHCP, and
+      security measures like firewalls and VPNs to ensure safe data
+      communication.
+    </p>
+
+    <h3>Importance of Networking</h3>
+    <p>
+      Networking is the backbone of IT infrastructure. It enables
+      communication, data transfer, internet access, and supports modern
+      services like cloud computing, streaming, and online collaboration.
+    </p>
+  </div>
+</section>
+
+<!-- JOB OPPORTUNITIES -->
+<section id="jobs">
+  <h2>Job Opportunities in Networking</h2>
+
+  <div class="network-box">
+    <h3>Network Engineer</h3>
+    <p>
+      Network engineers design, implement, and maintain computer networks
+      ensuring reliability and security for organizations.
+    </p>
+
+    <h3>Network Administrator</h3>
+    <p>
+      Network administrators manage day-to-day network operations,
+      monitor performance, and troubleshoot issues.
+    </p>
+
+    <h3>Network Security Specialist</h3>
+    <p>
+      Specialists focus on protecting networks from cyber threats using
+      firewalls, intrusion detection systems, and security policies.
+    </p>
+
+    <h3>IT Support and Consultancy</h3>
+    <p>
+      Networking professionals can work as IT support, providing solutions
+      to businesses, or offer consultancy services for network design and
+      optimization.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Networking Technology • All Rights Reserved</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  let index = 0;
+  const slides = document.querySelector(".slides");
+  const total = document.querySelectorAll(".slide").length;
+
+  function showSlide(){
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  document.querySelector(".next").onclick = () => {
+    index = (index + 1) % total;
+    showSlide();
+  };
+
+  document.querySelector(".prev").onclick = () => {
+    index = (index - 1 + total) % total;
+    showSlide();
+  };
+
+  setInterval(() => {
+    index = (index + 1) % total;
+    showSlide();
+  }, 4000);
+
+});
+</script>
+
+</body>
+</html>

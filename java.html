@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Java Programming | Technology Overview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#6366f1;
+  --secondary:#22d3ee;
+  --glass:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,0.15);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:linear-gradient(270deg,#020617,#111827,#1e293b);
+  background-size:600% 600%;
+  animation:bgMove 20s ease infinite;
+  color:#ffffff;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ===== NAVBAR ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:16px;
+  background:rgba(2,6,23,0.75);
+  backdrop-filter:blur(14px);
+  z-index:1000;
+}
+
+nav a{
+  color:#e5e7eb;
+  text-decoration:none;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:var(--secondary);
+}
+
+/* ===== IMAGE SLIDER ===== */
+.top-slider{
+  margin-top:70px;
+  width:100%;
+  height:70vh;
+  overflow:hidden;
+  position:relative;
+}
+
+.slides{
+  display:flex;
+  height:100%;
+  transition:transform 0.8s ease-in-out;
+}
+
+.slide{
+  min-width:100%;
+  position:relative;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Professional shadow overlay */
+.shadow-slide::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to right,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.75)
+  );
+}
+
+/* Slider Buttons */
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.6);
+  border:none;
+  color:white;
+  font-size:28px;
+  padding:10px 16px;
+  cursor:pointer;
+  border-radius:50%;
+}
+
+.prev{ left:20px; }
+.next{ right:20px; }
+
+/* ===== SECTION ===== */
+section{
+  padding:110px 10%;
+}
+
+h2{
+  text-align:center;
+  font-size:2.4rem;
+  margin-bottom:60px;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.java-box{
+  max-width:900px;
+  margin:auto;
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:45px;
+  line-height:1.9;
+  backdrop-filter:blur(12px);
+}
+
+.java-box h3{
+  margin-top:30px;
+  margin-bottom:12px;
+  font-size:1.4rem;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.java-box p{
+  color:#d1d5db;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px;
+  opacity:0.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .top-slider{ height:55vh; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#java">Java</a>
+</nav>
+
+<!-- IMAGE SLIDER -->
+<div class="top-slider" id="home">
+  <div class="slides">
+    <div class="slide">
+      <img src="java.jpg" alt="Java Programming">
+    </div>
+
+    <div class="slide shadow-slide">
+      <img src="java2.jpg" alt="Object Oriented Programming">
+    </div>
+
+    <div class="slide">
+      <img src="java3.jpg" alt="Enterprise Java Applications">
+    </div>
+  </div>
+
+  <button class="slide-btn prev">❮</button>
+  <button class="slide-btn next">❯</button>
+</div>
+
+<!-- JAVA DESCRIPTION -->
+<section id="java">
+  <h2>About Java Programming</h2>
+
+  <div class="java-box">
+    <h3>Introduction to Java</h3>
+    <p>
+      Java is a high-level, object-oriented programming language that was developed
+      by Sun Microsystems. It is designed to be platform-independent, which means
+      Java programs can run on any device that has a Java Virtual Machine (JVM).
+      This feature makes Java one of the most widely used programming languages
+      in the world.
+    </p>
+
+    <h3>Key Features of Java</h3>
+    <p>
+      Java supports object-oriented principles such as encapsulation, inheritance,
+      polymorphism, and abstraction. It also provides automatic memory management
+      through garbage collection, strong security features, and a rich standard
+      library. These features make Java reliable, secure, and easy to maintain.
+    </p>
+
+    <h3>Uses of Java</h3>
+    <p>
+      Java is widely used in web applications, mobile applications (Android),
+      desktop software, enterprise systems, and large-scale distributed applications.
+      Because of its stability and scalability, Java is commonly used in banking,
+      e-commerce, and industrial systems.
+    </p>
+
+    <h3>Java in This Website</h3>
+    <p>
+      This website presents an overview of Java programming using a modern web
+      interface. The image slider and clean layout demonstrate how technical
+      knowledge can be combined with web technologies to explain programming
+      concepts in a simple and professional manner.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Java Programming • All Rights Reserved</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  let index = 0;
+  const slides = document.querySelector(".slides");
+  const total = document.querySelectorAll(".slide").length;
+
+  function showSlide(){
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  document.querySelector(".next").onclick = () => {
+    index = (index + 1) % total;
+    showSlide();
+  };
+
+  document.querySelector(".prev").onclick = () => {
+    index = (index - 1 + total) % total;
+    showSlide();
+  };
+
+  setInterval(() => {
+    index = (index + 1) % total;
+    showSlide();
+  }, 4000);
+
+});
+</script>
+
+</body>
+</html>

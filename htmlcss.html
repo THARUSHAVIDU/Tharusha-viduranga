@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML & CSS Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#6366f1;
+  --secondary:#22d3ee;
+  --dark:#020617;
+  --glass:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,0.15);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:linear-gradient(270deg,#020617,#111827,#1e293b);
+  background-size:600% 600%;
+  animation:bgMove 20s ease infinite;
+  color:#fff;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:16px;
+  background:rgba(2,6,23,0.7);
+  backdrop-filter:blur(14px);
+  z-index:1000;
+}
+
+nav a{
+  color:#e5e7eb;
+  text-decoration:none;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:var(--secondary);
+}
+
+/* ===== SLIDER ===== */
+.top-slider{
+  margin-top:70px;
+  width:100%;
+  height:70vh;
+  overflow:hidden;
+  position:relative;
+}
+
+.slides{
+  display:flex;
+  height:100%;
+  transition:transform 0.8s ease-in-out;
+}
+
+.slide{
+  min-width:100%;
+  position:relative;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Shadow on second slide */
+.shadow-slide::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to right,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.7)
+  );
+}
+
+/* Buttons */
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.6);
+  border:none;
+  color:#fff;
+  font-size:28px;
+  padding:10px 16px;
+  cursor:pointer;
+  border-radius:50%;
+}
+
+.prev{ left:20px; }
+.next{ right:20px; }
+
+/* ===== SECTION ===== */
+section{
+  padding:110px 10%;
+}
+
+h2{
+  text-align:center;
+  font-size:2.4rem;
+  margin-bottom:60px;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.tech-box{
+  max-width:900px;
+  margin:auto;
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:45px;
+  line-height:1.9;
+  backdrop-filter:blur(12px);
+}
+
+.tech-box h3{
+  margin-top:30px;
+  margin-bottom:12px;
+  font-size:1.4rem;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.tech-box p{
+  color:#d1d5db;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px;
+  opacity:0.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .top-slider{ height:55vh; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About HTML & CSS</a>
+</nav>
+
+<!-- SLIDER -->
+<div class="top-slider" id="home">
+  <div class="slides">
+    <div class="slide">
+      <img src="html1.png" alt="HTML Structure">
+    </div>
+
+    <div class="slide shadow-slide">
+      <img src="html2.png" alt="CSS Styling">
+    </div>
+
+    <div class="slide">
+      <img src="html3.jpeg" alt="Web Design">
+    </div>
+  </div>
+
+  <button class="slide-btn prev">❮</button>
+  <button class="slide-btn next">❯</button>
+</div>
+
+<!-- ABOUT SECTION -->
+<section id="about">
+  <h2>About HTML & CSS</h2>
+
+  <div class="tech-box">
+    <h3>HTML (HyperText Markup Language)</h3>
+    <p>
+      HTML is the standard markup language used to create the structure of web pages.
+      It defines the layout and organization of content such as headings, paragraphs,
+      images, links, forms, and other elements. HTML acts as the foundation of a website
+      by determining what content appears on the page.
+    </p>
+
+    <p>
+      In this website, HTML is used to build the navigation bar, image slider, and
+      content sections. Proper HTML structure helps improve readability, accessibility,
+      and overall website organization.
+    </p>
+
+    <h3>CSS (Cascading Style Sheets)</h3>
+    <p>
+      CSS is used to control the visual appearance of a website. It allows developers
+      to apply colors, fonts, layouts, spacing, animations, and responsive designs to
+      HTML elements. CSS helps transform simple web pages into visually attractive and
+      user-friendly interfaces.
+    </p>
+
+    <p>
+      In this website, CSS is used to create a modern dark theme, smooth animations,
+      professional image shadows, and responsive layouts. Techniques such as flexbox,
+      gradients, transitions, and media queries are applied to ensure a clean and
+      professional design.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 HTML & CSS Website • All Rights Reserved</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  let index = 0;
+  const slides = document.querySelector(".slides");
+  const images = document.querySelectorAll(".slide");
+  const total = images.length;
+
+  function showSlide(){
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  document.querySelector(".next").onclick = () => {
+    index = (index + 1) % total;
+    showSlide();
+  };
+
+  document.querySelector(".prev").onclick = () => {
+    index = (index - 1 + total) % total;
+    showSlide();
+  };
+
+  setInterval(() => {
+    index = (index + 1) % total;
+    showSlide();
+  }, 4000);
+
+});
+</script>
+
+</body>
+</html>
